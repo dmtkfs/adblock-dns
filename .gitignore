@@ -1,0 +1,17 @@
+# Go build artifacts
+*.exe
+*.dll
+*.so
+*.dylib
+*.test
+
+# Output and logs
+adblock.log
+*.log
+*.out
+*.tmp
+
+# IDE/editor files
+.vscode/
+.idea/
+.DS_Store

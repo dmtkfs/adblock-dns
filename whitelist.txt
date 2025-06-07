@@ -1,0 +1,2 @@
+# one domain per line — no wildcards
+example.com
