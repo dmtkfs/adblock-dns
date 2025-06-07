@@ -105,19 +105,9 @@ go build -ldflags="-H=windowsgui" -o adblock-tray.exe ./cmd/tray
 
 ---
 
-## Uninstallation
+## To Uninstall
 
-* Simply delete the `adblock-cli.exe`, `adblock-tray.exe`, `whitelist.txt`, and `adblock.log` files. No system changes are made.
-
----
-
-## Contributing
-
-1. Fork the repo.
-2. Create a feature branch: `git checkout -b feature/YourFeature`.
-3. Commit your changes: `git commit -m "Add feature"`.
-4. Push: `git push origin feature/YourFeature`.
-5. Open a Pull Request.
+* Simply delete the `adblock-tray.exe`, `whitelist.txt`, and `adblock.log` files. No system changes are made.
 
 ---
 
