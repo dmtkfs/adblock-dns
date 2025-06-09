@@ -52,24 +52,25 @@ go build -ldflags="-H=windowsgui" -o adblock-tray.exe ./cmd/tray
 
 Run in a terminal for full verbosity and control:
 
-```bash
-# Standard mode: actually blocks
-adblock-cli.exe --listen=127.0.0.1:53 --interval=24h --v
+### Quick Start (no need to build an .exe):
 
-# Dry-run mode: logs blocked domains but does not block
-adblock-cli.exe --listen=127.0.0.1:53 --interval=24h --v --dry-run
+```bash
+go run ./cmd/cli -v
 ```
 
-* **Flags**:
+### Optional: Build a standalone CLI executable
 
-  * `--listen`  : address\:port for DNS proxy (default `127.0.0.1:53`).
-  * `--interval`: blocklist refresh interval (default `24h`).
-  * `--dry-run` : do not block, only log.
-  * `-v`        : verbose logging (`[BL] domain`, `[WL] domain`).
+```bash
+go build -o adblock-cli.exe ./cmd/cli
+./adblock-cli.exe -v
+```
 
-Logs appear both in the terminal and in `adblock.log` in the current directory.
+### Flags
 
----
+* `--listen`    : Address and port for DNS proxy (default: `127.0.0.1:53`)
+* `--interval`  : Blocklist refresh interval (default: `24h`)
+* `--dry-run`   : Log only; do not block (useful for testing)
+* `-v`          : Verbose logging (`[BL] domain`, `[WL] domain`)
 
 ### 2. Tray Mode (Windows)
 
@@ -92,6 +93,10 @@ go build -ldflags="-H=windowsgui" -o adblock-tray.exe ./cmd/tray
 ---
 
 ## Logs & Troubleshooting
+
+* **CLI mode:** Output appears in both the terminal and in `adblock.log` in your working directory.
+* **Tray mode:** Logs are written only to `adblock.log` (located in the same directory as the tray executable).
+
 
 * **Log file**: `adblock.log` next to the executable.
 * **Entries**:
