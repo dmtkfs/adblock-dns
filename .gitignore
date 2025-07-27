@@ -1,0 +1,7 @@
+dist/
+*.exe
+*.log
+*.zip
+*.tar.gz
+.DS_Store
+Thumbs.db
